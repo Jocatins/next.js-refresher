@@ -17,3 +17,5 @@ next.config.js files --> Is a development mode only feature for highlighting pot
 ### Routing
 
 In Next.js, the routing is a file-based system. The folder is responsible for that
+
+To perform client side navigation, we use the Link component provided by Next.js
