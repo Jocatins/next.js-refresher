@@ -50,3 +50,5 @@ Next JS supports two forms of pre-rendering
 -   It runs on build time
 
 -   Server Side Rendering (SSR) is a method of pre-rendering where the HTML pages are generated at request time
+
+\_app.js is a component that wraps every page in the application
