@@ -66,5 +66,22 @@ When to set fallback to false
 -   The paths that have not been generated at build time will not result to a 404page. Instead, Next.js will serve a fallback version of the page on the first request
 -   In the background, Next.js will statically generate the requested path HTML and JSON. This includes running getStaticProps.
 -   When that is done, the browser receives the JSON for the generated path. This will be used to automatically render the page with the required props.
+-   If fallback is set to true, then any paths not returned by getStaticPaths will be dynamically generated at request time
+-   Next.js keeps track of the new list of pre-rendered pages. Subsequent request to the same path will serve the generated page
+
+When to set fallback to true
+
+-   When there may be new pages added frequently
+-   It is most suitable if your app has a large number of static pages that depend on data e.g large e-commerce site
+
+`getStaticPaths` `fallback: blocking`
+
+-   The paths returned from getStaticPaths will be rendered to HTML at build time by getStaticProps
+-   The paths that have not been generated at build time will not result in a 404 page. Instead on the first request, Next.js will render the page on the server and return generated HTML
+
+When to set fallback to blocking
+
+-   On a UX level, some people prefer the page to be loaded without any loading indicator
+-   But, the technical issue it was introduced was because some crawlers did not support JS
 
 -   Server Side Rendering (SSR) is a method of pre-rendering where the HTML pages are generated at request time
