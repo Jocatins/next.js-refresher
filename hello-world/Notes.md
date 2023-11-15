@@ -19,6 +19,7 @@ next.config.js files --> Is a development mode only feature for highlighting pot
 In Next.js, the routing is a file-based system. The folder is responsible for that
 
 To perform client side navigation, we use the Link component provided by Next.js
+
 `_app.js` is a component that wraps every page in the application
 
 # Pre-rendering
@@ -34,7 +35,10 @@ Why pre-rendering
 Next JS supports two forms of pre-rendering
 
 -   Static Generation
+
 -   Server Side Rendering
+
+# Static Generation
 
 -   Static Generation is a method of pre-rendering where the HTML pages are generated at build time
 -   The pages can be built once, cached by a CDN and served to the client almost instantly
@@ -84,4 +88,36 @@ When to set fallback to blocking
 -   On a UX level, some people prefer the page to be loaded without any loading indicator
 -   But, the technical issue it was introduced was because some crawlers did not support JS
 
+# Static Generation and Issues
+
+-   It is a method of pre-rendering where the HTML pages are generated at build time
+-   The pre-rendered static pages can be pushed to a CDN, cached and served to clients instantly
+-   Static content is fast and better for SEO as they are immediately indexed by search engines
+-   Static generation with getStaticProps for data fetching and getStaticPaths for dynamic pages seem like a really good approach to a wide variety of applications in prod.
+
+# Issues
+
+-   The build time is proportional to the number of pages in the application
+-   A page, once generated, can contain stale data till the time you rebuild the app
+
+# Incremental Static Regeneration
+
+There was a need to update only those pages which needed a change without having to rebuild the entire app
+
+-   With ISR, Next.js allows you to update static pages after you have build the application
+-   You can statically generate individual pages without needing to rebuild the entire app, solving issue of stale data
+
+# Server Side Rendering
+
 -   Server Side Rendering (SSR) is a method of pre-rendering where the HTML pages are generated at request time
+-   The HTML is generated for every incoming request
+-   `getServerSideProps()` runs only on the server side
+-   The function will never run on client-side
+-   You can write server-side codes directly in `getServerSideProps()`
+-   It cannot be run on a regular component, it is used for pre-rendering and not client-side data fetching
+
+# Different Objects you can access from Context
+
+-   Request and Response
+-   Query
+-   Params
