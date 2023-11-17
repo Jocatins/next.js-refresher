@@ -121,3 +121,11 @@ There was a need to update only those pages which needed a change without having
 -   Request and Response
 -   Query
 -   Params
+
+# Client-side data fetching
+
+npm i swr
+
+useSWR() -> The first argument is a unique key and the second is an async function where we get the data
+
+`Shallow Routing` with this feature you can update the URL in the browser, without running the code inside the getServerSideProps()

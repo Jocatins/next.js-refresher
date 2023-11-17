@@ -15,6 +15,14 @@ function Home() {
 			<Link href="/products">
 				<a>Products</a>
 			</Link>
+			<br />
+			<Link href="/dashboard">
+				<a>Dashboard</a>
+			</Link>
+			<br />
+			<Link href="/events">
+				<a>Events</a>
+			</Link>
 		</>
 	);
 }
