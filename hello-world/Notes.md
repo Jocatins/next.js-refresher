@@ -54,6 +54,10 @@ Next JS supports two forms of pre-rendering
 -   It should return an object and also return a props key, which is an object
 -   It runs on build time
 
+`the getStaticPaths` function is used to define the dynamic paths that should be pre-rendered at build time.
+
+`the fallback property` returned from getStaticPaths is used to define the behavior of a page that isn't pre-rendered at build time. This property can be set to `true` to show a fallback page while the page is being generated, `false` to show a 404 page, or `blocking` to generate the page at request time.
+
 `getStaticPaths` `fallback: false`
 
 -   The paths returned from getStaticPaths will be rendered to HTML at build time by getStaticProps
@@ -129,3 +133,9 @@ npm i swr
 useSWR() -> The first argument is a unique key and the second is an async function where we get the data
 
 `Shallow Routing` with this feature you can update the URL in the browser, without running the code inside the getServerSideProps()
+
+# API routes
+
+You can write FE codes in React and also write APIs that can be called by the frontend code
+It allows you to create RESTful endpoints as part of your Next.js app folder structure
+It gives you everything you need to write full-stack- React and Node

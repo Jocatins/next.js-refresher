@@ -23,6 +23,10 @@ function Home() {
 			<Link href="/events">
 				<a>Events</a>
 			</Link>
+			<br />
+			<Link href="/comments">
+				<a>Comments</a>
+			</Link>
 		</>
 	);
 }
